@@ -1,0 +1,6 @@
+BenchmarkDiscardedLogSlog-8       	      10	      5442 ns/op	       1 B/op	       0 allocs/op
+BenchmarkDiscardedLogZerolog-8    	      10	       125.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleInfoLogSlog-8      	      10	     52192 ns/op	     571 B/op	       3 allocs/op
+BenchmarkSimpleInfoLogZerolog-8   	      10	      4521 ns/op	     178 B/op	       0 allocs/op
+ok  	github.com/Akalanka47000/go-pkg-benchmarks/loggers	0.832s
+PASS
