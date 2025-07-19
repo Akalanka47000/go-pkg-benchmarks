@@ -3,11 +3,13 @@ GO_BENCH_ARGS ?= -benchtime=30s
 format:
 	gofmt -w .
 benchmark:
-	@go test -bench=. $(GO_BENCH_ARGS) --run=$(run) -benchmem -tags=benchmark ./... 2>&1 | grep -E '^(Benchmark|PASS|FAIL|ok|\s+[0-9]+)' | sort > bench.txt
+	@go test -bench=. $(GO_BENCH_ARGS) --run=$(run) -benchmem -tags=benchmark ./... 2>&1 | grep -E '^(Benchmark|PASS|FAIL|ok|go|\s+[0-9]+|[a-zA-Z0-9_/.-]+\.go:)' | sort > bench.txt
 b1x:
 	make benchmark GO_BENCH_ARGS="-benchtime=1x"
 b10x:
 	make benchmark GO_BENCH_ARGS="-benchtime=10x"
+b1mx:
+	make benchmark GO_BENCH_ARGS="-benchtime=10000000x"
 b1s:
 	make benchmark GO_BENCH_ARGS="-benchtime=1s"
 b10s:
